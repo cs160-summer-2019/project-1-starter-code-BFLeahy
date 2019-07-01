@@ -3,15 +3,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Forecast - Alert!</title>
+	<title>Forecast Alert</title>
 	
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+  
+  <style>
+    body {
+      background-image: url("{% static 'weather/assets/gradient.png' %}");
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    .container-fluid {
+      font-size: 36pt;
+      color: white;
+      text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
+    }
+    .row {
+      padding: 30px;
+    }
+  </style>
 
 </head>
-<body>
-	<!-- your single-location forecast with alert interface here -->
+<body class="text-center" id="b">
+	<!-- your single-location forecast interface here -->
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col" style="padding: 20px;">
+        <form>
+          <input type="text" class="form-control" style="border-radius:20px;border:2px solid black;height:60px;padding:20px;box-shadow:5px 5px 2px black;" placeholder="Search">
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-between" style="padding:10px">
+      <div class="col-4" style="padding-right:20px;">
+        <u>Today</u>
+      </div>
+      <div class="col-4" style="padding-left:20px;">
+        7 Days
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col" style="border-top:2px solid #b1b1b1">
+        <h1 style="font-size: 64pt;">
+          Berkeley
+        </h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <img onclick="alert()" src="{% static 'weather/assets/alert.png' %}" height="400px">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <h1 style="font-size: 64pt;">
+          75&#176;F
+        </h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <p style="color:black; text-shadow:0px">
+          9:00
+        </p>
+      </div>
+      <div class="col-6" style="padding-left:10px;padding-right:10px;">
+        <h2 style="font-size:48pt;">
+          10:00
+        </h2>
+      </div>
+      <div class="col">
+        <p style="color:black; text-shadow:0px;">
+          11:00
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Chance of Rain: 0%
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Humidity: 56%
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <img src="{% static 'weather/assets/alert.png' %}" style="height:60px;">
+        <button type="button" class="btn btn-outline-light" style="height:120px;font-size:36pt;">
+          View Recent Alerts
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
+<script>
+  function alert () {
+    var newCont = document.createElement("div");
+    newCont.setAttribute("class", "h-100 container-fluid");
+    newCont.setAttribute("id", "a");
+    newCont.style.position = "absolute";
+    newCont.style.left = "0px";
+    newCont.style.top = "0px";
+    newCont.style.zIndex = "10"
+    var newRow1 = document.createElement("div");
+    newRow1.setAttribute("class", "row justify-content-center");
+    var newCol1 = document.createElement("div");
+    newCol1.setAttribute("class", "col");
+    newCol1.textContent = "Extreme Weather Alert";
+    newCol1.style.fontSize = "80pt"
+    newCont.appendChild(newRow1);
+    newRow1.appendChild(newCol1);
+    newCont.style.border = "2px solid black";
+    newCont.style.backgroundColor = "grey";
+    var newRow2 = document.createElement("div");
+    var newCol2 = document.createElement("div");
+    newRow2.setAttribute("class", "row justify-content-start");
+    newCol2.setAttribute("class", "col");
+    newCol2.textContent = "Location: Berkeley. This is where more information goes.";
+    newCont.appendChild(newRow2);
+    newRow2.appendChild(newCol2);
+    document.getElementById("b").appendChild(newCont);
+  } 
+</script>
 </html>
 
 
