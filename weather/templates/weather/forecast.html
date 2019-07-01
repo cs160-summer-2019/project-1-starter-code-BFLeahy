@@ -3,7 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Forecast</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+  
   <style>
+    body {
+      background-image: url("{% static 'weather/assets/gradient.png' %}");
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
     .container-fluid {
       font-size: 36pt;
       color: white;
@@ -16,13 +25,9 @@
       padding: 20px;
     }
   </style>
-	<title>Forecast</title>
-	
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
 
 </head>
-<body class="text-center" style="background-color: DodgerBlue;">
+<body class="text-center" style=>
 	<!-- your single-location forecast interface here -->
   <div class="container-fluid">
     <div class="row justify-content-center">
