@@ -4,12 +4,16 @@
 <html>
 <head>
   <style>
-    .container {
-      font-size: 24pt;
-      background-color: DodgerBlue;
+    .container-fluid {
+      font-size: 36pt;
+      color: white;
+      text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
     }
-    #h1 {
-      font-size: 48pt;
+    .row {
+      padding: 20px;
     }
   </style>
 	<title>Forecast</title>
@@ -18,17 +22,17 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
 
 </head>
-<body class="text-center">
+<body class="text-center" style="background-color: DodgerBlue;">
 	<!-- your single-location forecast interface here -->
-  <div class="container">
+  <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col" style="padding: 20px;">
         <form>
-          <input type="text" class="form-control" style="border-radius:30px;border:2px solid #B1B1B1;height:40px;padding:20px;box-shadow:5px 5px 2px grey;" placeholder="Search">
+          <input type="text" class="form-control" style="border-radius:30px;border:2px solid black;height:40px;padding:20px;box-shadow:5px 5px 2px black;" placeholder="Search">
         </form>
       </div>
     </div>
-    <div class="row justify-content-center" style="padding:10px">
+    <div class="row justify-content-between">
       <div class="col-4" style="padding-right:20px;">
         <u>Today</u>
       </div>
@@ -36,40 +40,50 @@
         7 Days
       </div>
     </div>
-    <div class="row justify-content-center" style="padding:10px;">
+    <div class="row justify-content-center">
       <div class="col" style="border-top:2px solid #b1b1b1">
-        <h1>
+        <h1 style="font-size: 64pt;">
           Berkeley
         </h1>
       </div>
     </div>
-    <div class="row justify-content-center" style="padding-bottom:10px">
+    <div class="row justify-content-center">
       <div class="col">
-        <img src="{% static 'weather/assets/sun.jpg' %}" height="200px">
+        <img src="{% static 'weather/assets/sun.png' %}" height="400px">
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <h1>
+        <h1 style="font-size: 64pt;">
           75&#176;F
         </h1>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col">
-        <p style="color:grey">
+        <p style="color:black; text-shadow:0px">
           9:00
         </p>
       </div>
       <div class="col-6" style="padding-left:10px;padding-right:10px;">
-        <h2>
+        <h2 style="font-size:48pt;">
           10:00
         </h2>
       </div>
       <div class="col">
-        <p style="color:grey">
+        <p style="color:black; text-shadow:0px;">
           11:00
         </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Chance of Rain: 0%
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Humidity: 56%
       </div>
     </div>
   </div>
