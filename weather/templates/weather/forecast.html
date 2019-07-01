@@ -4,10 +4,12 @@
 <html>
 <head>
   <style>
-    .tile { 
-      padding: 20px; 
-      border: 2px solid #B1B1B1; 
-      height: 400px; 
+    .container {
+      font-size: 24pt;
+      background-color: DodgerBlue;
+    }
+    #h1 {
+      font-size: 48pt;
     }
   </style>
 	<title>Forecast</title>
@@ -20,35 +22,54 @@
 	<!-- your single-location forecast interface here -->
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-xs" style="padding: 20px;">
+      <div class="col" style="padding: 20px;">
         <form>
           <input type="text" class="form-control" style="border-radius:30px;border:2px solid #B1B1B1;height:40px;padding:20px;box-shadow:5px 5px 2px grey;" placeholder="Search">
         </form>
       </div>
     </div>
     <div class="row justify-content-center" style="padding:10px">
-      <div class="col-xs-4" style="padding-right:20px;">
+      <div class="col-4" style="padding-right:20px;">
         <u>Today</u>
       </div>
-      <div class="col-xs-4" style="padding-left:20px;">
+      <div class="col-4" style="padding-left:20px;">
         7 Days
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs" style="border-top:2px solid #B1B1B1">
-        
-      </div>
-    </div>
     <div class="row justify-content-center" style="padding:10px;">
-      <div class="col-xs">
+      <div class="col" style="border-top:2px solid #b1b1b1">
         <h1>
           Berkeley
         </h1>
       </div>
     </div>
-    <div class="row justify-content-center" style="padding:20px">
-      <div class="col-xs">
-        <img src="{% static 'weather/assets/sun.jpg' %}" height="150px">
+    <div class="row justify-content-center" style="padding-bottom:10px">
+      <div class="col">
+        <img src="{% static 'weather/assets/sun.jpg' %}" height="200px">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <h1>
+          75&#176;F
+        </h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <p style="color:grey">
+          9:00
+        </p>
+      </div>
+      <div class="col-6" style="padding-left:10px;padding-right:10px;">
+        <h2>
+          10:00
+        </h2>
+      </div>
+      <div class="col">
+        <p style="color:grey">
+          11:00
+        </p>
       </div>
     </div>
   </div>
